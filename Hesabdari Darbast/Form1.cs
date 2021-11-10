@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Hesabdari_Darbast
 {
+
+    
+    
+    /// Testy Taghirat masaln inja kheili taghiiiiirat khoobi ijad kardi m alan mikhaym sabt konim
     public partial class Form1 : Form
     {
         public Form1()
