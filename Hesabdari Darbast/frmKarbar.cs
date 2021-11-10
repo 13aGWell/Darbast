@@ -13,7 +13,7 @@ using BehComponents;
 namespace Hesabdari_Darbast
 {
     public partial class frmKarbar : Form
-    {
+    {//taghir 3
         public frmKarbar()
         {
             InitializeComponent();

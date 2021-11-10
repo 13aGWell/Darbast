@@ -14,6 +14,7 @@ namespace Hesabdari_Darbast
     
     
     /// Testy Taghirat masaln inja kheili taghiiiiirat khoobi ijad kardi m alan mikhaym sabt konim
+    /// taghire 2
     public partial class Form1 : Form
     {
         public Form1()
