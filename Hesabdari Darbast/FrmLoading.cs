@@ -22,7 +22,7 @@ namespace Hesabdari_Darbast
             cp1.Value += 10;
             cp2.Value += 10;
 
-            if(cp1.Value==100 & cp2.Value==100 )
+            if(cp1.Value==30 & cp2.Value==30 )
             {
                 timer1.Stop();
                 new Form1().ShowDialog();
@@ -30,6 +30,11 @@ namespace Hesabdari_Darbast
             }
 
 
+
+        }
+
+        private void groupPanel1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -147,5 +147,45 @@ namespace Hesabdari_Darbast
             frm.buttonX2.Visible = false;
             this.Close();
         }
+
+        private void txtIdmoshtari_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Moshtari where IdMoshtari Like '%' + @S + '%'";
+            adp.SelectCommand.Parameters.AddWithValue("@s", txtIdmoshtari.Text + "%");
+            adp.Fill(ds, "tbl_Moshtari");
+            dgvMoshtari.DataSource = ds;
+            dgvMoshtari.DataMember = "tbl_Moshtari";
+
+        }
+
+        private void txtNameMoshtari_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Moshtari where NameMoshtari Like '%' + @S + '%'";
+            adp.SelectCommand.Parameters.AddWithValue("@s", txtNameMoshtari.Text + "%");
+            adp.Fill(ds, "tbl_Moshtari");
+            dgvMoshtari.DataSource = ds;
+            dgvMoshtari.DataMember = "tbl_Moshtari";
+        }
+
+        private void txtMoileMoshtari_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Moshtari where Tel Like '%' + @S + '%' or Mobile Like '%' + @S + '%' ";
+            adp.SelectCommand.Parameters.AddWithValue("@s", txtMoileMoshtari.Text + "%");
+            adp.Fill(ds, "tbl_Moshtari");
+            dgvMoshtari.DataSource = ds;
+            dgvMoshtari.DataMember = "tbl_Moshtari";
+        }
     }
 }

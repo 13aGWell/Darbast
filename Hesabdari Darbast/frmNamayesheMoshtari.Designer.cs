@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNamayesheMoshtari));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.ID = new System.Windows.Forms.Label();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.dgvMoshtari = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.txtMoileMoshtari = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNameMoshtari = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtIdmoshtari = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.ID = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMoshtari)).BeginInit();
@@ -131,6 +131,16 @@
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.BackColor = System.Drawing.Color.Transparent;
+            this.ID.Location = new System.Drawing.Point(3, 486);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(14, 14);
+            this.ID.TabIndex = 5;
+            this.ID.Text = "0";
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -159,25 +169,25 @@
             // 
             // dgvMoshtari
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMoshtari.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMoshtari.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvMoshtari.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvMoshtari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMoshtari.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMoshtari.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMoshtari.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvMoshtari.Location = new System.Drawing.Point(3, 66);
             this.dgvMoshtari.Name = "dgvMoshtari";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dgvMoshtari.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.dgvMoshtari.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMoshtari.RowTemplate.Height = 40;
             this.dgvMoshtari.Size = new System.Drawing.Size(1090, 417);
             this.dgvMoshtari.TabIndex = 1;
@@ -198,6 +208,7 @@
             this.txtMoileMoshtari.TabIndex = 0;
             this.txtMoileMoshtari.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMoileMoshtari.WatermarkText = "شماره موبایل را وارد کنید";
+            this.txtMoileMoshtari.TextChanged += new System.EventHandler(this.txtMoileMoshtari_TextChanged);
             // 
             // txtNameMoshtari
             // 
@@ -213,6 +224,7 @@
             this.txtNameMoshtari.TabIndex = 0;
             this.txtNameMoshtari.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNameMoshtari.WatermarkText = "نام شرکت یا شخص حقیقی را وارد کنید";
+            this.txtNameMoshtari.TextChanged += new System.EventHandler(this.txtNameMoshtari_TextChanged);
             // 
             // txtIdmoshtari
             // 
@@ -228,16 +240,7 @@
             this.txtIdmoshtari.TabIndex = 0;
             this.txtIdmoshtari.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdmoshtari.WatermarkText = "شماره قرارداد مشتری را وارد کنید";
-            // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.BackColor = System.Drawing.Color.Transparent;
-            this.ID.Location = new System.Drawing.Point(3, 486);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(14, 14);
-            this.ID.TabIndex = 5;
-            this.ID.Text = "0";
+            this.txtIdmoshtari.TextChanged += new System.EventHandler(this.txtIdmoshtari_TextChanged);
             // 
             // frmNamayesheMoshtari
             // 

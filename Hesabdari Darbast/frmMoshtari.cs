@@ -16,7 +16,7 @@ namespace Hesabdari_Darbast
 {
     public partial class frmMoshtari : Form
     {
-        //Change
+        //Changenew
         private readonly bool _isEditMode;
         //Change
         public frmMoshtari(bool isEditMode = false)

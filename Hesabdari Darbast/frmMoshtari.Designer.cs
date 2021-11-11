@@ -81,6 +81,7 @@
             this.txtDore = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.btnM = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -103,7 +104,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.سی = new DevComponents.AdvTree.ColumnHeader();
             this.سیووو = new DevComponents.AdvTree.ColumnHeader();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMazadErtefa)).BeginInit();
@@ -1016,6 +1016,19 @@
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 2;
             // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
+            this.buttonX2.Location = new System.Drawing.Point(602, 10);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(117, 35);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 2;
+            this.buttonX2.Text = "ویرایش";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -1190,6 +1203,7 @@
             this.txtTozihat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTozihat.Size = new System.Drawing.Size(248, 43);
             this.txtTozihat.TabIndex = 7;
+            this.txtTozihat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtAddress
             // 
@@ -1205,6 +1219,7 @@
             this.txtAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAddress.Size = new System.Drawing.Size(248, 40);
             this.txtAddress.TabIndex = 6;
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtNameMoshtari
             // 
@@ -1325,19 +1340,6 @@
             this.سیووو.Name = "سیووو";
             this.سیووو.Text = "Column";
             this.سیووو.Width.Absolute = 150;
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
-            this.buttonX2.Location = new System.Drawing.Point(602, 10);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(117, 35);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 2;
-            this.buttonX2.Text = "ویرایش";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // frmMoshtari
             // 

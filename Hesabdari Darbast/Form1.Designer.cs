@@ -34,6 +34,7 @@
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.btnTanzimat = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
@@ -60,9 +61,10 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // styleManager1
@@ -83,8 +85,8 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.ribbonTabItem2,
             this.ribbonTabItem3});
@@ -143,6 +145,21 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
+            // 
+            // buttonX3
+            // 
+            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX3.Image = ((System.Drawing.Image)(resources.GetObject("buttonX3.Image")));
+            this.buttonX3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonX3.Location = new System.Drawing.Point(567, 1);
+            this.buttonX3.Name = "buttonX3";
+            this.buttonX3.Size = new System.Drawing.Size(144, 156);
+            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX3.TabIndex = 7;
+            this.buttonX3.Text = "ثبت مشتری";
+            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
             // 
             // btnTanzimat
             // 
@@ -178,6 +195,7 @@
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel2.Controls.Add(this.buttonX2);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel2.Name = "ribbonPanel2";
@@ -196,17 +214,16 @@
             // 
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 2;
-            this.ribbonPanel2.Visible = false;
             // 
             // ribbonTabItem2
             // 
-            this.ribbonTabItem2.Checked = true;
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel1;
             this.ribbonTabItem2.Text = "معرفی";
             // 
             // ribbonTabItem3
             // 
+            this.ribbonTabItem3.Checked = true;
             this.ribbonTabItem3.Name = "ribbonTabItem3";
             this.ribbonTabItem3.Panel = this.ribbonPanel2;
             this.ribbonTabItem3.Text = "مالی";
@@ -452,19 +469,19 @@
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
             // 
-            // buttonX3
+            // buttonX2
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Image = ((System.Drawing.Image)(resources.GetObject("buttonX3.Image")));
-            this.buttonX3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonX3.Location = new System.Drawing.Point(567, 1);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(144, 156);
-            this.buttonX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX3.TabIndex = 7;
-            this.buttonX3.Text = "ثبت مشتری";
-            this.buttonX3.Click += new System.EventHandler(this.buttonX3_Click);
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
+            this.buttonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonX2.Location = new System.Drawing.Point(731, 7);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(144, 156);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 0;
+            this.buttonX2.Text = "ثبت هزینه";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // Form1
             // 
@@ -480,6 +497,7 @@
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -516,6 +534,7 @@
         private DevComponents.DotNetBar.ButtonX btnTanzimat;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX buttonX3;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }
 

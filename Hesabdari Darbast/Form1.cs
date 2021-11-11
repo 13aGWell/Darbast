@@ -69,5 +69,10 @@ namespace Hesabdari_Darbast
             //Change
             new frmMoshtari(false).ShowDialog();
         }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            new frmHazine().ShowDialog();
+        }
     }
 }

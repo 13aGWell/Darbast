@@ -80,6 +80,7 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
+            this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
             // 
             // cp2
             // 

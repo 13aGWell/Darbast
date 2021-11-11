@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHazine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHazine.Designer.cs">
+      <DependentUpon>frmHazine.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKarbar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHazine.resx">
+      <DependentUpon>frmHazine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKarbar.resx">
       <DependentUpon>frmKarbar.cs</DependentUpon>
