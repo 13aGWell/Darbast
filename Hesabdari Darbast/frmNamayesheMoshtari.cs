@@ -155,7 +155,7 @@ namespace Hesabdari_Darbast
             adp.SelectCommand = new SqlCommand();
             adp.SelectCommand.Connection = con;
             adp.SelectCommand.CommandText = "select * from tbl_Moshtari where IdMoshtari Like '%' + @S + '%'";
-            adp.SelectCommand.Parameters.AddWithValue("@s", txtIdmoshtari.Text + "%");
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtIdmoshtari.Text + "%");
             adp.Fill(ds, "tbl_Moshtari");
             dgvMoshtari.DataSource = ds;
             dgvMoshtari.DataMember = "tbl_Moshtari";
@@ -169,7 +169,7 @@ namespace Hesabdari_Darbast
             adp.SelectCommand = new SqlCommand();
             adp.SelectCommand.Connection = con;
             adp.SelectCommand.CommandText = "select * from tbl_Moshtari where NameMoshtari Like '%' + @S + '%'";
-            adp.SelectCommand.Parameters.AddWithValue("@s", txtNameMoshtari.Text + "%");
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtNameMoshtari.Text + "%");
             adp.Fill(ds, "tbl_Moshtari");
             dgvMoshtari.DataSource = ds;
             dgvMoshtari.DataMember = "tbl_Moshtari";
@@ -182,7 +182,7 @@ namespace Hesabdari_Darbast
             adp.SelectCommand = new SqlCommand();
             adp.SelectCommand.Connection = con;
             adp.SelectCommand.CommandText = "select * from tbl_Moshtari where Tel Like '%' + @S + '%' or Mobile Like '%' + @S + '%' ";
-            adp.SelectCommand.Parameters.AddWithValue("@s", txtMoileMoshtari.Text + "%");
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtMoileMoshtari.Text + "%");
             adp.Fill(ds, "tbl_Moshtari");
             dgvMoshtari.DataSource = ds;
             dgvMoshtari.DataMember = "tbl_Moshtari";

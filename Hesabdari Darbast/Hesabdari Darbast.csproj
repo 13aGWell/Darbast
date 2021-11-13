@@ -95,6 +95,12 @@
     <Compile Include="frmNamayesheMoshtari.Designer.cs">
       <DependentUpon>frmNamayesheMoshtari.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShomareHesab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShomareHesab.Designer.cs">
+      <DependentUpon>frmShomareHesab.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTanzimat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNamayesheMoshtari.resx">
       <DependentUpon>frmNamayesheMoshtari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShomareHesab.resx">
+      <DependentUpon>frmShomareHesab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTanzimat.resx">
       <DependentUpon>frmTanzimat.cs</DependentUpon>
