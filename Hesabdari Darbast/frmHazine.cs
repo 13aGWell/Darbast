@@ -89,6 +89,11 @@ namespace Hesabdari_Darbast
 
         private void frmHazine_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            DataBase db = new DataBase();
+            dt = db.MySelect("Select * from tbl_ShomareHesab ");
+            txtPardakht.DataSource = dt;
+            txtPardakht.DisplayMember = "ShomareHesab";
             Display1();
             dgvNoeHazine.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNoeHazine.Columns[0].HeaderText = " کد هزینه";
@@ -100,7 +105,7 @@ namespace Hesabdari_Darbast
             Display2();
             dgvNamayesheHazine.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNamayesheHazine.Columns[0].HeaderText = "سند";
-            dgvNamayesheHazine.Columns[0].Width = 90;
+            dgvNamayesheHazine.Columns[0].Width = 40;
             dgvNamayesheHazine.Columns[1].HeaderText = "حساب پرداختنی  ";
             dgvNamayesheHazine.Columns[1].Width = 120;
             dgvNamayesheHazine.Columns[2].HeaderText = " نوع هزینه ";
@@ -204,6 +209,7 @@ namespace Hesabdari_Darbast
 
         private void btnAddHesab_Click(object sender, EventArgs e)
         {
+            
             frmShomareHesab frm = new frmShomareHesab();
             frm.ShowDialog();
 
@@ -315,6 +321,45 @@ namespace Hesabdari_Darbast
             buttonX2.Visible = false;
 
 
+        }
+
+        private void txtSearchHazine_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Hazine where NoeHazine Like '%' + @S + '%'";
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtSearchHazine.Text + "%");
+            adp.Fill(ds, "tbl_Hazine");
+            dgvNamayesheHazine.DataSource = ds;
+            dgvNamayesheHazine.DataMember = "tbl_Hazine";
+        }
+
+        private void txtSearchTarikh_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Hazine where Tarikh Like '%' + @S + '%'";
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtSearchTarikh.Text + "%");
+            adp.Fill(ds, "tbl_Hazine");
+            dgvNamayesheHazine.DataSource = ds;
+            dgvNamayesheHazine.DataMember = "tbl_Hazine";
+        }
+
+        private void txtSearchTozihat_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter();
+            adp.SelectCommand = new SqlCommand();
+            adp.SelectCommand.Connection = con;
+            adp.SelectCommand.CommandText = "select * from tbl_Hazine where Tozihat Like '%' + @S + '%'";
+            adp.SelectCommand.Parameters.AddWithValue("@S", txtSearchTozihat.Text + "%");
+            adp.Fill(ds, "tbl_Hazine");
+            dgvNamayesheHazine.DataSource = ds;
+            dgvNamayesheHazine.DataMember = "tbl_Hazine";
         }
     }
 }
