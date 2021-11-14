@@ -74,5 +74,10 @@ namespace Hesabdari_Darbast
         {
             new frmHazine().ShowDialog();
         }
+
+        private void buttonX4_Click(object sender, EventArgs e)
+        {
+            new frmShomareHesab().ShowDialog();
+        }
     }
 }

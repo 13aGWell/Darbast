@@ -221,26 +221,44 @@ namespace Hesabdari_Darbast
         {
             try
             {
-
-                cmd.Connection = con;
-                cmd.Parameters.Clear();
-                cmd.CommandText = "insert into tbl_Hazine(Hesab,NoeHazine,Tarikh,Gheymat,Tozihat)values(@a,@b,@c,@d,@e)";
-                cmd.Parameters.AddWithValue("@a", txtPardakht.Text);
-                cmd.Parameters.AddWithValue("@b", txtHazine.Text);
-                cmd.Parameters.AddWithValue("@c", txtTarikh.Text);
-                cmd.Parameters.AddWithValue("@d", txtMablagh.Text);
-                cmd.Parameters.AddWithValue("@e", txtTozihat.Text);
+                string str;
+                int str1;
                 con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBoxFarsi.Show("اطلاعات با موفقیت ثبت شد", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
-                txtPardakht.Text = "";
-                txtHazine.Text = "";
-                txtTarikh.Text = "";
-                txtMablagh.Text = "";
-                txtTozihat.Text = "";
+                SqlCommand sqlcmd = new SqlCommand("select MojodiAvaliye from tbl_ShomareHesab where ShomareHesab= '" + txtPardakht.Text + "'",con);
+                str = Convert.ToString((int)sqlcmd.ExecuteScalar());
+                str1 = Convert.ToInt32(txtMablagh.Text);
+                if (txtMablagh.Value>Convert.ToInt32(str))
+                {
+                    MessageBoxFarsi.Show("موجودی حساب برای پرداخت این مبلغ کافی نمی باشد", "هشدار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+                } 
+                else
+                {
+                    int b = Int32.Parse(str)-str1;
+                    string updatequery = "update tbl_ShomareHesab set MojodiAvaliye='" + b + "' where ShomareHesab='" + txtPardakht.Text + "'";
+                    SqlCommand com = new SqlCommand(updatequery, con);
+                    com.ExecuteNonQuery();
+                    cmd.Connection = con;
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = "insert into tbl_Hazine(Hesab,NoeHazine,Tarikh,Gheymat,Tozihat)values(@a,@b,@c,@d,@e)";
+                    cmd.Parameters.AddWithValue("@a", txtPardakht.Text);
+                    cmd.Parameters.AddWithValue("@b", txtHazine.Text);
+                    cmd.Parameters.AddWithValue("@c", txtTarikh.Text);
+                    cmd.Parameters.AddWithValue("@d", txtMablagh.Text);
+                    cmd.Parameters.AddWithValue("@e", txtTozihat.Text);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBoxFarsi.Show("اطلاعات با موفقیت ثبت شد", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+                    txtPardakht.Text = "";
+                    txtHazine.Text = "";
+                    txtTarikh.Text = "";
+                    txtMablagh.Text = "";
+                    txtTozihat.Text = "";
 
-                Display2();
+                    Display2();
+                }
+                 
+
+
             }
             catch (Exception)
             {
