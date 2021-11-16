@@ -89,11 +89,13 @@ namespace Hesabdari_Darbast
 
         private void frmHazine_Load(object sender, EventArgs e)
         {
+            ///برای کمبو باکس حساب پرداختنی در هزینه ها از جدول شماره حساب ها
             DataTable dt = new DataTable();
             DataBase db = new DataBase();
             dt = db.MySelect("Select * from tbl_ShomareHesab ");
             txtPardakht.DataSource = dt;
             txtPardakht.DisplayMember = "ShomareHesab";
+            ///نمایش آیتم های هزینه ها و نام سربرگ در دیتاگرید ویو
             Display1();
             dgvNoeHazine.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNoeHazine.Columns[0].HeaderText = " کد هزینه";
@@ -102,6 +104,7 @@ namespace Hesabdari_Darbast
             dgvNoeHazine.Columns[1].Width = 230;
             buttonX1.Visible = false;
             buttonX2.Visible = false;
+            ///نمایش هزینه های ثبت شده و سربرگ در دیتا گرید ویو
             Display2();
             dgvNamayesheHazine.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvNamayesheHazine.Columns[0].HeaderText = "سند";
@@ -219,7 +222,7 @@ namespace Hesabdari_Darbast
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            try
+             try
             {
                 string str;
                 int str1;

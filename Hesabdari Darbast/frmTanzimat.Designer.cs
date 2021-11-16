@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanzimat));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTanzimat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.dgvTanzimat = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtTozihat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMobile = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtId = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTel = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtAddress = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNamefroshgah = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtId = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTanzimat)).BeginInit();
@@ -140,6 +140,19 @@
             this.groupPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel3.TabIndex = 0;
             // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Image = ((System.Drawing.Image)(resources.GetObject("buttonX1.Image")));
+            this.buttonX1.Location = new System.Drawing.Point(178, 3);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(132, 35);
+            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX1.TabIndex = 2;
+            this.buttonX1.Text = "ویرایش";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
             // dgvTanzimat
             // 
             this.dgvTanzimat.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
@@ -172,7 +185,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTanzimat.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTanzimat.Size = new System.Drawing.Size(618, 150);
+            this.dgvTanzimat.Size = new System.Drawing.Size(630, 150);
             this.dgvTanzimat.TabIndex = 3;
             this.dgvTanzimat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellContentClick);
             this.dgvTanzimat.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvTanzimat_MouseUp);
@@ -182,7 +195,7 @@
             this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(253, 3);
+            this.btnDelete.Location = new System.Drawing.Point(332, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 35);
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -195,7 +208,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(395, 3);
+            this.btnSave.Location = new System.Drawing.Point(483, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 35);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -279,6 +292,20 @@
             this.txtMobile.Size = new System.Drawing.Size(270, 22);
             this.txtMobile.TabIndex = 3;
             // 
+            // txtId
+            // 
+            // 
+            // 
+            // 
+            this.txtId.Border.Class = "TextBoxBorder";
+            this.txtId.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtId.Location = new System.Drawing.Point(384, 11);
+            this.txtId.Name = "txtId";
+            this.txtId.PreventEnterBeep = true;
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(114, 22);
+            this.txtId.TabIndex = 0;
+            // 
             // txtTel
             // 
             // 
@@ -322,10 +349,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.Location = new System.Drawing.Point(513, 180);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 14);
+            this.label4.Size = new System.Drawing.Size(50, 14);
             this.label4.TabIndex = 1;
             this.label4.Text = "توضیحات";
             // 
@@ -333,10 +360,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.Location = new System.Drawing.Point(513, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 14);
+            this.label3.Size = new System.Drawing.Size(80, 14);
             this.label3.TabIndex = 1;
             this.label3.Text = "آدرس محل کار";
             // 
@@ -344,21 +371,32 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label5.Location = new System.Drawing.Point(311, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 14);
+            this.label5.Size = new System.Drawing.Size(62, 14);
             this.label5.TabIndex = 1;
             this.label5.Text = "تلفن همراه";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.Location = new System.Drawing.Point(510, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 14);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "کد تنظیمات";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.Location = new System.Drawing.Point(513, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 14);
+            this.label2.Size = new System.Drawing.Size(54, 14);
             this.label2.TabIndex = 1;
             this.label2.Text = "تلفن ثابت";
             // 
@@ -366,50 +404,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.Location = new System.Drawing.Point(512, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 14);
+            this.label1.Size = new System.Drawing.Size(93, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "نام داربست فلزی";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(510, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 14);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "کد تنظیمات";
-            // 
-            // txtId
-            // 
-            // 
-            // 
-            // 
-            this.txtId.Border.Class = "TextBoxBorder";
-            this.txtId.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtId.Location = new System.Drawing.Point(384, 11);
-            this.txtId.Name = "txtId";
-            this.txtId.PreventEnterBeep = true;
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(114, 22);
-            this.txtId.TabIndex = 0;
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Image = ((System.Drawing.Image)(resources.GetObject("buttonX1.Image")));
-            this.buttonX1.Location = new System.Drawing.Point(115, 3);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(132, 35);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 2;
-            this.buttonX1.Text = "ویرایش";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
             // frmTanzimat
             // 

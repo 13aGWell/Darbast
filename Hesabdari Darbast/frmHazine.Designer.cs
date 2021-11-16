@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHazine));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.groupPanel6 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtSearchTozihat = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSearchTarikh = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtSearchHazine = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.btnAddHesab = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel7 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnShow = new DevComponents.DotNetBar.ButtonX();
             this.btnVirayesh = new DevComponents.DotNetBar.ButtonX();
@@ -68,15 +73,10 @@
             this.txtidhazine = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dgvNoeHazine = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.txtsearch = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnAddHesab = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.hesabdaridbDataSet = new Hesabdari_Darbast.HesabdaridbDataSet();
             this.hesabdaridbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Hesabdari_Darbast.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtSearchHazine = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtSearchTarikh = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtSearchTozihat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.groupPanel6.SuspendLayout();
@@ -231,6 +231,82 @@
             this.groupPanel6.TabIndex = 1;
             this.groupPanel6.Text = "ثبت هزینه ها";
             // 
+            // txtSearchTozihat
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchTozihat.Border.Class = "TextBoxBorder";
+            this.txtSearchTozihat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSearchTozihat.Location = new System.Drawing.Point(14, 203);
+            this.txtSearchTozihat.Name = "txtSearchTozihat";
+            this.txtSearchTozihat.PreventEnterBeep = true;
+            this.txtSearchTozihat.Size = new System.Drawing.Size(223, 22);
+            this.txtSearchTozihat.TabIndex = 15;
+            this.txtSearchTozihat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchTozihat.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtSearchTozihat.WatermarkText = "جستجو بر اساس توضیحات";
+            this.txtSearchTozihat.TextChanged += new System.EventHandler(this.txtSearchTozihat_TextChanged);
+            // 
+            // txtSearchTarikh
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchTarikh.Border.Class = "TextBoxBorder";
+            this.txtSearchTarikh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSearchTarikh.Location = new System.Drawing.Point(264, 203);
+            this.txtSearchTarikh.Name = "txtSearchTarikh";
+            this.txtSearchTarikh.PreventEnterBeep = true;
+            this.txtSearchTarikh.Size = new System.Drawing.Size(222, 22);
+            this.txtSearchTarikh.TabIndex = 15;
+            this.txtSearchTarikh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchTarikh.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtSearchTarikh.WatermarkText = "جستجو بر اساس تاریخ";
+            this.txtSearchTarikh.TextChanged += new System.EventHandler(this.txtSearchTarikh_TextChanged);
+            // 
+            // txtSearchHazine
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchHazine.Border.Class = "TextBoxBorder";
+            this.txtSearchHazine.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtSearchHazine.Location = new System.Drawing.Point(503, 203);
+            this.txtSearchHazine.Name = "txtSearchHazine";
+            this.txtSearchHazine.PreventEnterBeep = true;
+            this.txtSearchHazine.Size = new System.Drawing.Size(193, 22);
+            this.txtSearchHazine.TabIndex = 15;
+            this.txtSearchHazine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearchHazine.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtSearchHazine.WatermarkText = "جستجو بر اساس نام هزینه";
+            this.txtSearchHazine.TextChanged += new System.EventHandler(this.txtSearchHazine_TextChanged);
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
+            this.buttonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonX2.Location = new System.Drawing.Point(621, 147);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(36, 24);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 14;
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // btnAddHesab
+            // 
+            this.btnAddHesab.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAddHesab.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAddHesab.Image = ((System.Drawing.Image)(resources.GetObject("btnAddHesab.Image")));
+            this.btnAddHesab.Location = new System.Drawing.Point(204, 10);
+            this.btnAddHesab.Name = "btnAddHesab";
+            this.btnAddHesab.Size = new System.Drawing.Size(33, 22);
+            this.btnAddHesab.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAddHesab.TabIndex = 13;
+            this.btnAddHesab.Click += new System.EventHandler(this.btnAddHesab_Click);
+            // 
             // groupPanel7
             // 
             this.groupPanel7.CanvasColor = System.Drawing.SystemColors.Control;
@@ -327,35 +403,35 @@
             // dgvNamayesheHazine
             // 
             this.dgvNamayesheHazine.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNamayesheHazine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNamayesheHazine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNamayesheHazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNamayesheHazine.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNamayesheHazine.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNamayesheHazine.EnableHeadersVisualStyles = false;
             this.dgvNamayesheHazine.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvNamayesheHazine.Location = new System.Drawing.Point(14, 231);
             this.dgvNamayesheHazine.Name = "dgvNamayesheHazine";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNamayesheHazine.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNamayesheHazine.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNamayesheHazine.Size = new System.Drawing.Size(683, 137);
             this.dgvNamayesheHazine.TabIndex = 11;
             this.dgvNamayesheHazine.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNamayesheHazine_CellContentClick);
@@ -441,6 +517,7 @@
             this.txtTarikh.Location = new System.Drawing.Point(331, 44);
             this.txtTarikh.Mask = "####/##/##";
             this.txtTarikh.Name = "txtTarikh";
+            this.txtTarikh.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTarikh.Size = new System.Drawing.Size(98, 21);
             this.txtTarikh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.txtTarikh.TabIndex = 7;
@@ -726,35 +803,35 @@
             // dgvNoeHazine
             // 
             this.dgvNoeHazine.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNoeHazine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNoeHazine.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNoeHazine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNoeHazine.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNoeHazine.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvNoeHazine.EnableHeadersVisualStyles = false;
             this.dgvNoeHazine.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dgvNoeHazine.Location = new System.Drawing.Point(9, 32);
             this.dgvNoeHazine.Name = "dgvNoeHazine";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNoeHazine.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNoeHazine.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvNoeHazine.Size = new System.Drawing.Size(361, 233);
             this.dgvNoeHazine.TabIndex = 3;
             this.dgvNoeHazine.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNoeHazine_CellContentClick);
@@ -776,31 +853,6 @@
             this.txtsearch.WatermarkText = "جستجوی نوع هزینه";
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
-            // btnAddHesab
-            // 
-            this.btnAddHesab.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAddHesab.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAddHesab.Image = ((System.Drawing.Image)(resources.GetObject("btnAddHesab.Image")));
-            this.btnAddHesab.Location = new System.Drawing.Point(204, 10);
-            this.btnAddHesab.Name = "btnAddHesab";
-            this.btnAddHesab.Size = new System.Drawing.Size(33, 22);
-            this.btnAddHesab.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAddHesab.TabIndex = 13;
-            this.btnAddHesab.Click += new System.EventHandler(this.btnAddHesab_Click);
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
-            this.buttonX2.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.buttonX2.Location = new System.Drawing.Point(621, 147);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(36, 24);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 14;
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
-            // 
             // hesabdaridbDataSet
             // 
             this.hesabdaridbDataSet.DataSetName = "HesabdaridbDataSet";
@@ -820,57 +872,6 @@
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             this.dataSet1BindingSource.Position = 0;
-            // 
-            // txtSearchHazine
-            // 
-            // 
-            // 
-            // 
-            this.txtSearchHazine.Border.Class = "TextBoxBorder";
-            this.txtSearchHazine.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSearchHazine.Location = new System.Drawing.Point(503, 203);
-            this.txtSearchHazine.Name = "txtSearchHazine";
-            this.txtSearchHazine.PreventEnterBeep = true;
-            this.txtSearchHazine.Size = new System.Drawing.Size(193, 22);
-            this.txtSearchHazine.TabIndex = 15;
-            this.txtSearchHazine.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSearchHazine.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtSearchHazine.WatermarkText = "جستجو بر اساس نام هزینه";
-            this.txtSearchHazine.TextChanged += new System.EventHandler(this.txtSearchHazine_TextChanged);
-            // 
-            // txtSearchTarikh
-            // 
-            // 
-            // 
-            // 
-            this.txtSearchTarikh.Border.Class = "TextBoxBorder";
-            this.txtSearchTarikh.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSearchTarikh.Location = new System.Drawing.Point(264, 203);
-            this.txtSearchTarikh.Name = "txtSearchTarikh";
-            this.txtSearchTarikh.PreventEnterBeep = true;
-            this.txtSearchTarikh.Size = new System.Drawing.Size(222, 22);
-            this.txtSearchTarikh.TabIndex = 15;
-            this.txtSearchTarikh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSearchTarikh.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtSearchTarikh.WatermarkText = "جستجو بر اساس تاریخ";
-            this.txtSearchTarikh.TextChanged += new System.EventHandler(this.txtSearchTarikh_TextChanged);
-            // 
-            // txtSearchTozihat
-            // 
-            // 
-            // 
-            // 
-            this.txtSearchTozihat.Border.Class = "TextBoxBorder";
-            this.txtSearchTozihat.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtSearchTozihat.Location = new System.Drawing.Point(14, 203);
-            this.txtSearchTozihat.Name = "txtSearchTozihat";
-            this.txtSearchTozihat.PreventEnterBeep = true;
-            this.txtSearchTozihat.Size = new System.Drawing.Size(223, 22);
-            this.txtSearchTozihat.TabIndex = 15;
-            this.txtSearchTozihat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSearchTozihat.WatermarkImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.txtSearchTozihat.WatermarkText = "جستجو بر اساس توضیحات";
-            this.txtSearchTozihat.TextChanged += new System.EventHandler(this.txtSearchTozihat_TextChanged);
             // 
             // frmHazine
             // 

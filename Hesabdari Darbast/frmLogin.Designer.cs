@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -37,18 +38,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbNoo = new System.Windows.Forms.ComboBox();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.cmbNoo);
+            this.groupPanel1.Controls.Add(this.pictureBox1);
             this.groupPanel1.Controls.Add(this.buttonX2);
             this.groupPanel1.Controls.Add(this.buttonX1);
             this.groupPanel1.Controls.Add(this.txtPassword);
             this.groupPanel1.Controls.Add(this.txtUserName);
+            this.groupPanel1.Controls.Add(this.label4);
             this.groupPanel1.Controls.Add(this.label2);
             this.groupPanel1.Controls.Add(this.label1);
             this.groupPanel1.Controls.Add(this.groupPanel2);
@@ -56,7 +64,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(378, 224);
+            this.groupPanel1.Size = new System.Drawing.Size(491, 236);
             // 
             // 
             // 
@@ -86,17 +94,18 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 0;
-            
+            this.groupPanel1.Click += new System.EventHandler(this.groupPanel1_Click);
             // 
             // buttonX2
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(47, 150);
+            this.buttonX2.Image = ((System.Drawing.Image)(resources.GetObject("buttonX2.Image")));
+            this.buttonX2.Location = new System.Drawing.Point(236, 172);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(105, 38);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 3;
+            this.buttonX2.TabIndex = 4;
             this.buttonX2.Text = "خروج";
             this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
@@ -104,11 +113,12 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(213, 150);
+            this.buttonX1.Image = ((System.Drawing.Image)(resources.GetObject("buttonX1.Image")));
+            this.buttonX1.Location = new System.Drawing.Point(363, 172);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(99, 38);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 2;
+            this.buttonX1.TabIndex = 3;
             this.buttonX1.Text = "ورود";
             this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
             // 
@@ -120,12 +130,12 @@
             this.txtPassword.Border.Class = "TextBoxBorder";
             this.txtPassword.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtPassword.DisabledBackColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(28, 88);
+            this.txtPassword.Location = new System.Drawing.Point(235, 86);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PreventEnterBeep = true;
             this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPassword.Size = new System.Drawing.Size(242, 22);
+            this.txtPassword.Size = new System.Drawing.Size(166, 22);
             this.txtPassword.TabIndex = 1;
             // 
             // txtUserName
@@ -136,18 +146,18 @@
             this.txtUserName.Border.Class = "TextBoxBorder";
             this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtUserName.DisabledBackColor = System.Drawing.Color.Black;
-            this.txtUserName.Location = new System.Drawing.Point(28, 55);
+            this.txtUserName.Location = new System.Drawing.Point(235, 55);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PreventEnterBeep = true;
             this.txtUserName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtUserName.Size = new System.Drawing.Size(242, 22);
+            this.txtUserName.Size = new System.Drawing.Size(166, 22);
             this.txtUserName.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(285, 90);
+            this.label2.Location = new System.Drawing.Point(407, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 3;
@@ -157,7 +167,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(285, 55);
+            this.label1.Location = new System.Drawing.Point(407, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 14);
             this.label1.TabIndex = 4;
@@ -169,9 +179,9 @@
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.label3);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
-            this.groupPanel2.Location = new System.Drawing.Point(0, 6);
+            this.groupPanel2.Location = new System.Drawing.Point(0, -3);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(369, 36);
+            this.groupPanel2.Size = new System.Drawing.Size(482, 52);
             // 
             // 
             // 
@@ -201,23 +211,56 @@
             // 
             this.groupPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel2.TabIndex = 0;
+            this.groupPanel2.Click += new System.EventHandler(this.groupPanel2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(89, 6);
+            this.label3.Location = new System.Drawing.Point(155, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "صفحه ورود به نرم افزار";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(407, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 14);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "کلمه عبور";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmbNoo
+            // 
+            this.cmbNoo.FormattingEnabled = true;
+            this.cmbNoo.Items.AddRange(new object[] {
+            "مدیر",
+            "کاربر"});
+            this.cmbNoo.Location = new System.Drawing.Point(236, 118);
+            this.cmbNoo.Name = "cmbNoo";
+            this.cmbNoo.Size = new System.Drawing.Size(167, 22);
+            this.cmbNoo.TabIndex = 2;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 224);
+            this.ClientSize = new System.Drawing.Size(491, 236);
             this.Controls.Add(this.groupPanel1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -228,6 +271,7 @@
             this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +287,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbNoo;
     }
 }

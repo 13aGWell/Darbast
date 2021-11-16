@@ -21,36 +21,42 @@ namespace Hesabdari_Darbast
         }
         SqlConnection con = new SqlConnection("Data source=EN2\\SQL2019;initial catalog=Hesabdaridb;integrated security=true");
         SqlCommand cmd = new SqlCommand();
+        DataSet ds = new DataSet();
+
         private void buttonX1_Click(object sender, EventArgs e)
         {
             try
             {
-                int i = 0;
-                cmd = new SqlCommand("select count(*) from Tbl_karbar where UserName=@N And Password=@M", con);
-                cmd.Parameters.AddWithValue("@N", txtUserName.Text);
-                cmd.Parameters.AddWithValue("@M", txtPassword.Text);
-                con.Open();
-                i = (int)cmd.ExecuteScalar();
-
-                con.Close();
-
-                if (i > 0)
+                string struser, search;
+                if (cmbNoo.SelectedItem == "مدیر")
                 {
-                    
-                    new FrmLoading().ShowDialog();
-                    this.Close();
-
-
+                    struser = "Admin";
+                    cls_variable.stru = "مدیر";
                 }
                 else
                 {
-                    
+                    struser = "User";
+                    cls_variable.stru = "کاربر";
+                }
+
+                search = "select IdKarbar from Tbl_karbar where NoeeKarbar='" +struser+ "' AND UserName='"+txtUserName.Text+ "' AND Password='"+txtPassword.Text+"'";
+                SqlDataAdapter da = new SqlDataAdapter(search,con);
+                da.Fill(ds,"Tbl_karbar");
+                if (ds.Tables["Tbl_karbar"].Rows.Count > 0 )
+                {
+                    new FrmLoading().ShowDialog();
+                    this.Close();
+                }
+                else
+                {
                     MessageBoxFarsi.Show("نام کاربری و رمز عبور اشتباه است", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Warning, MessageBoxFarsiDefaultButton.Button1);
                 }
+                con.Close();
+
             }
             catch (Exception)
             {
-                MessageBoxFarsi.Show("مشکلی رخ داده", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+                MessageBoxFarsi.Show(" مشکلی رخ داده است", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
             }
 
         }
@@ -60,6 +66,14 @@ namespace Hesabdari_Darbast
             this.Close();
         }
 
+        private void groupPanel1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void groupPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

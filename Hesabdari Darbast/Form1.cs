@@ -79,5 +79,25 @@ namespace Hesabdari_Darbast
         {
             new frmShomareHesab().ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblUser.Text = cls_variable.stru;
+        }
+
+        private void buttonX5_Click(object sender, EventArgs e)
+        {
+            new frmShomareHesab().ShowDialog();
+        }
+
+        private void buttonX6_Click(object sender, EventArgs e)
+        {
+            new frmHazine().ShowDialog();
+        }
+
+        private void buttonX8_Click(object sender, EventArgs e)
+        {
+            new frmSabtechek().ShowDialog();
+        }
     }
 }

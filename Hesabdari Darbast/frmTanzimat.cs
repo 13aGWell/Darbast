@@ -43,6 +43,7 @@ namespace Hesabdari_Darbast
         private void frmTanzimat_Load(object sender, EventArgs e)
         {
             Display();
+            dgvTanzimat.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvTanzimat.Columns[0].HeaderText = "کد ";
             dgvTanzimat.Columns[1].HeaderText = "نام مجموعه";
             dgvTanzimat.Columns[2].HeaderText = "تلفن ثابت";
