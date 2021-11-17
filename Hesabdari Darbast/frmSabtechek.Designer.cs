@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSabtechek));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.txtSearcheBabat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSearchVaziyat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSearchTarikh = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dgvChek = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnChekJadid = new DevComponents.DotNetBar.ButtonX();
             this.BtnSaveChek = new DevComponents.DotNetBar.ButtonX();
-            this.btnVirayeshChek = new DevComponents.DotNetBar.ButtonX();
             this.btnDeleteCheck = new DevComponents.DotNetBar.ButtonX();
             this.btnShowChek = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -75,21 +72,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearchShomareResid = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dgvChek = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btnVirayeshChek = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChek)).BeginInit();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMablaghChek)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChek)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.dgvChek);
             this.groupPanel1.Controls.Add(this.txtSearcheBabat);
             this.groupPanel1.Controls.Add(this.txtSearchVaziyat);
             this.groupPanel1.Controls.Add(this.txtSearchTarikh);
-            this.groupPanel1.Controls.Add(this.dgvChek);
             this.groupPanel1.Controls.Add(this.groupPanel2);
             this.groupPanel1.Controls.Add(this.groupPanel3);
             this.groupPanel1.Controls.Add(this.txtSearchShomareResid);
@@ -176,41 +175,13 @@
             this.txtSearchTarikh.WatermarkText = "جستجوی تاریخ سررسید";
             this.txtSearchTarikh.TextChanged += new System.EventHandler(this.txtSearchTarikh_TextChanged);
             // 
-            // dgvChek
-            // 
-            this.dgvChek.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChek.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvChek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChek.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvChek.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvChek.Location = new System.Drawing.Point(6, 324);
-            this.dgvChek.Name = "dgvChek";
-            this.dgvChek.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvChek.Size = new System.Drawing.Size(736, 176);
-            this.dgvChek.TabIndex = 3;
-            this.dgvChek.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvChek_MouseMove);
-            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.btnVirayeshChek);
             this.groupPanel2.Controls.Add(this.btnChekJadid);
             this.groupPanel2.Controls.Add(this.BtnSaveChek);
-            this.groupPanel2.Controls.Add(this.btnVirayeshChek);
             this.groupPanel2.Controls.Add(this.btnDeleteCheck);
             this.groupPanel2.Controls.Add(this.btnShowChek);
             this.groupPanel2.DisabledBackColor = System.Drawing.Color.Empty;
@@ -273,24 +244,12 @@
             this.BtnSaveChek.Text = "ثبت";
             this.BtnSaveChek.Click += new System.EventHandler(this.BtnSaveChek_Click);
             // 
-            // btnVirayeshChek
-            // 
-            this.btnVirayeshChek.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnVirayeshChek.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnVirayeshChek.Image = ((System.Drawing.Image)(resources.GetObject("btnVirayeshChek.Image")));
-            this.btnVirayeshChek.Location = new System.Drawing.Point(323, 6);
-            this.btnVirayeshChek.Name = "btnVirayeshChek";
-            this.btnVirayeshChek.Size = new System.Drawing.Size(100, 38);
-            this.btnVirayeshChek.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnVirayeshChek.TabIndex = 18;
-            this.btnVirayeshChek.Text = "ویرایش";
-            // 
             // btnDeleteCheck
             // 
             this.btnDeleteCheck.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDeleteCheck.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDeleteCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCheck.Image")));
-            this.btnDeleteCheck.Location = new System.Drawing.Point(464, 6);
+            this.btnDeleteCheck.Location = new System.Drawing.Point(470, 6);
             this.btnDeleteCheck.Name = "btnDeleteCheck";
             this.btnDeleteCheck.Size = new System.Drawing.Size(100, 38);
             this.btnDeleteCheck.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -309,6 +268,7 @@
             this.btnShowChek.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnShowChek.TabIndex = 1;
             this.btnShowChek.Text = "نمایش چک ها";
+            this.btnShowChek.Click += new System.EventHandler(this.btnShowChek_Click);
             // 
             // groupPanel3
             // 
@@ -722,6 +682,37 @@
             this.txtSearchShomareResid.WatermarkText = "جستجوی شماره رسید";
             this.txtSearchShomareResid.TextChanged += new System.EventHandler(this.txtSearchShomareResid_TextChanged_1);
             // 
+            // dgvChek
+            // 
+            this.dgvChek.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvChek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChek.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvChek.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dgvChek.Location = new System.Drawing.Point(9, 324);
+            this.dgvChek.Name = "dgvChek";
+            this.dgvChek.Size = new System.Drawing.Size(731, 182);
+            this.dgvChek.TabIndex = 5;
+            // 
+            // btnVirayeshChek
+            // 
+            this.btnVirayeshChek.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnVirayeshChek.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnVirayeshChek.Image = ((System.Drawing.Image)(resources.GetObject("btnVirayeshChek.Image")));
+            this.btnVirayeshChek.Location = new System.Drawing.Point(344, 6);
+            this.btnVirayeshChek.Name = "btnVirayeshChek";
+            this.btnVirayeshChek.Size = new System.Drawing.Size(100, 38);
+            this.btnVirayeshChek.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnVirayeshChek.TabIndex = 20;
+            this.btnVirayeshChek.Text = "ویرایش";
+            this.btnVirayeshChek.Click += new System.EventHandler(this.btnVirayeshChek_Click_1);
+            // 
             // frmSabtechek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -736,11 +727,11 @@
             this.Text = "فرم ثبت چک ها";
             this.Load += new System.EventHandler(this.frmSabtechek_Load);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChek)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMablaghChek)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChek)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -750,15 +741,6 @@
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel3;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbSayad;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbVaziyat;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbMahiyat;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtDarVajh;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtBabat;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtBank;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtGirandeChek;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtShomareChek;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtIdChek;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -773,13 +755,6 @@
         private System.Windows.Forms.Label label1;
         public DevComponents.DotNetBar.Controls.MaskedTextBoxAdv txtTarikheSarResid;
         public DevComponents.DotNetBar.Controls.MaskedTextBoxAdv txtTarikheSodor;
-        private DevComponents.Editors.IntegerInput txtMablaghChek;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSearchShomareResid;
-        private DevComponents.DotNetBar.ButtonX btnChekJadid;
-        private DevComponents.DotNetBar.ButtonX BtnSaveChek;
-        private DevComponents.DotNetBar.ButtonX btnVirayeshChek;
-        private DevComponents.DotNetBar.ButtonX btnDeleteCheck;
-        private DevComponents.DotNetBar.ButtonX btnShowChek;
         private DevComponents.Editors.ComboItem comboItem6;
         private DevComponents.Editors.ComboItem comboItem7;
         private DevComponents.Editors.ComboItem comboItem3;
@@ -787,9 +762,25 @@
         private DevComponents.Editors.ComboItem comboItem5;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbSayad;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbVaziyat;
+        public DevComponents.DotNetBar.Controls.ComboBoxEx cmbMahiyat;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtDarVajh;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtBabat;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtBank;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtGirandeChek;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtShomareChek;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtIdChek;
+        public DevComponents.Editors.IntegerInput txtMablaghChek;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtSearchShomareResid;
+        public DevComponents.DotNetBar.ButtonX btnChekJadid;
+        public DevComponents.DotNetBar.ButtonX BtnSaveChek;
+        public DevComponents.DotNetBar.ButtonX btnDeleteCheck;
+        public DevComponents.DotNetBar.ButtonX btnShowChek;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtSearcheBabat;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtSearchVaziyat;
+        public DevComponents.DotNetBar.Controls.TextBoxX txtSearchTarikh;
         private DevComponents.DotNetBar.Controls.DataGridViewX dgvChek;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSearcheBabat;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSearchVaziyat;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtSearchTarikh;
+        private DevComponents.DotNetBar.ButtonX btnVirayeshChek;
     }
 }

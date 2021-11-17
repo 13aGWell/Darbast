@@ -96,6 +96,12 @@
     <Compile Include="frmMoshtari.Designer.cs">
       <DependentUpon>frmMoshtari.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNamayesheChekha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNamayesheChekha.Designer.cs">
+      <DependentUpon>frmNamayesheChekha.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNamayesheMoshtari.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMoshtari.resx">
       <DependentUpon>frmMoshtari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNamayesheChekha.resx">
+      <DependentUpon>frmNamayesheChekha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNamayesheMoshtari.resx">
       <DependentUpon>frmNamayesheMoshtari.cs</DependentUpon>

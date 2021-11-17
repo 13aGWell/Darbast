@@ -15,7 +15,19 @@ namespace Hesabdari_Darbast
 {
     public partial class frmSabtechek : Form
     {
-        public frmSabtechek()
+
+      private readonly bool _isEditMode;
+
+    public frmSabtechek(bool isEditMode = false)
+     {
+
+      _isEditMode = isEditMode;
+      InitializeComponent();
+ 
+       BtnSaveChek.Visible = _isEditMode;
+     }
+
+            public frmSabtechek()
         {
             InitializeComponent();
         }
@@ -82,6 +94,10 @@ namespace Hesabdari_Darbast
 
         private void frmSabtechek_Load(object sender, EventArgs e)
         {
+            if (txtIdChek.Text == "")
+            {
+                btnVirayeshChek.Visible = false;
+            }
             btnChekJadid.Visible = false;
             Display();
             dgvChek.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -107,8 +123,8 @@ namespace Hesabdari_Darbast
             dgvChek.Columns[9].Width = 90;
             dgvChek.Columns[10].HeaderText = "ثبت صیاد";
             dgvChek.Columns[10].Width = 90;
-            dgvChek.Columns[11].HeaderText = "بانک";
-            dgvChek.Columns[11].Width = 90;
+            dgvChek.Columns[11].HeaderText = "بابت";
+            dgvChek.Columns[11].Width = 200;
         }
         private void btnChekJadid_Click(object sender, EventArgs e)
         {
@@ -215,5 +231,45 @@ namespace Hesabdari_Darbast
             dgvChek.DataSource = ds;
             dgvChek.DataMember = "tbl_Chek";
         }
+
+        private void btnShowChek_Click(object sender, EventArgs e)
+        {
+            new frmNamayesheChekha().ShowDialog();
+
+        }
+
+        private void btnVirayeshChek_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                cmd.Connection = con;
+                cmd.Parameters.Clear();
+                cmd.CommandText = "update tbl_Chek set TarikheSodor='" + txtTarikheSarResid.Text + "',Mahiyat='" + cmbMahiyat.Text + "',TarikheSarResid='" + txtTarikheSarResid.Text + "',Mablagh='" + txtMablaghChek.Text + "',ShomareChek='" + txtShomareChek.Text + "',Girande='" + txtGirandeChek.Text + "',Vaziyat='" + cmbVaziyat.Text + "',Bank='" + txtBank.Text + "',Darvajhe='" + txtDarVajh.Text + "',Sayad='" + cmbSayad.Text + "',Babat='" + txtBabat.Text + "' where IdChek =" + txtIdChek.Text;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBoxFarsi.Show("اطلاعات با موفقیت ویرایش شد", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+                Display();
+                txtTarikheSodor.Text = "";
+                cmbMahiyat.Text = "";
+                txtTarikheSarResid.Text = "";
+                txtMablaghChek.Text = "";
+                txtShomareChek.Text = "";
+                txtGirandeChek.Text = "";
+                cmbVaziyat.Text = "";
+                txtBank.Text = "";
+                txtDarVajh.Text = "";
+                cmbSayad.Text = "";
+                txtBabat.Text = "";
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBoxFarsi.Show("مشکلی رخ داده است", "پیغام", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+
+            }
+        }
+
     }
 }
